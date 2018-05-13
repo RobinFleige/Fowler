@@ -7,27 +7,27 @@ public class RentalTest {
 	@Test
     public void testRentalDays() {
         int days = 1;
-        Rental rental = new Rental(new Movie("", Movie.REGULAR), days);
+        Rental rental = new Rental(new Movie("", Price.REGULAR), days);
         assertEquals(rental.getDaysRented(), days);
     }
 
     @Test
     public void testRentalDaysZero() {
         int days = 0;
-        Rental rental = new Rental(new Movie("", Movie.REGULAR), days);
+        Rental rental = new Rental(new Movie("", Price.REGULAR), days);
         assertEquals(rental.getDaysRented(), days);
     }
 
     @Test
     public void testRentalDaysNegative() {
         int days = -1;
-        Rental rental = new Rental(new Movie("", Movie.REGULAR), days);
+        Rental rental = new Rental(new Movie("", Price.REGULAR), days);
         assertEquals(rental.getDaysRented(), days);
     }
 
     @Test
     public void testRentalDaysMovie() {
-        Movie movie = new Movie("", Movie.REGULAR);
+        Movie movie = new Movie("", Price.REGULAR);
         Rental rental = new Rental(movie, 1);
         assertEquals(rental.getMovie(), movie);
     }

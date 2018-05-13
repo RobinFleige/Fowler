@@ -28,7 +28,7 @@ public class CustomerTest {
     @Test
     public void testCustomerStatementOneEntry() {
         Customer myCustomer = new Customer("");
-        myCustomer.addRental(new Rental(new Movie("", Movie.REGULAR), 1));
+        myCustomer.addRental(new Rental(new Movie("", Price.REGULAR), 1));
         assertEquals(myCustomer.statement().split("\n").length, 5);
     }
 
