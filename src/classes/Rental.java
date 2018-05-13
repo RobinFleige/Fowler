@@ -20,4 +20,10 @@ public class Rental {
 	public double getCharge() {
 		return movie.getCharge(daysRented);
 	}
+	
+	public int getFrequentRenterPoint() {
+		if ((movie.getPrice() == Price.NEW_RELEASE) && daysRented > 1)
+			return 2;
+		return 1;
+	}
 }

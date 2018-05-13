@@ -40,18 +40,14 @@ public class Customer {
 		return result;
 	}
 
-	public int getFrequentRenterPoint(Rental rental) {
-		if ((rental.getMovie().getPrice() == Price.NEW_RELEASE) && rental.getDaysRented() > 1)
-			return 2;
-		return 1;
-	}
+	
 
 	public int getTotalFrequentRenterPoints() {
 		int frequentRenterPoints = 0;
 		Enumeration<Rental> enum_rentals = rentals.elements();
 		while (enum_rentals.hasMoreElements()) {
 			Rental each = (Rental) enum_rentals.nextElement();
-			frequentRenterPoints+=getFrequentRenterPoint(each);
+			frequentRenterPoints+=each.getFrequentRenterPoint();
 		}
 		return frequentRenterPoints;
 	}
